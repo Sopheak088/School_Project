@@ -130,3 +130,213 @@ CREATE TABLE tbScoreDetail(
 	UpdatedDate DATETIME NULL
 )
 GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[INSERT_STUDENT]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].INSERT_STUDENT
+GO
+CREATE PROCEDURE INSERT_STUDENT( 
+								@Id	UNIQUEIDENTIFIER,
+								@StudentID NVARCHAR(255),
+								@FullName NVARCHAR(255),
+								@Gender NVARCHAR(10),
+								@BirthDate DATETIME,
+								@BirthPlace NVARCHAR(255),
+								@FatherName NVARCHAR(255),
+								@FatherJob NVARCHAR(255),
+								@MotherName NVARCHAR(255),
+								@MotherJob NVARCHAR(255),
+								@CurrentPlace NVARCHAR(255),
+								@Contact NVARCHAR(255),
+								@Photo VARBINARY(MAX),
+								@CreatedBy NVARCHAR(255),
+								@CreatedDate DATETIME
+								)
+AS
+BEGIN
+	INSERT INTO tbStudent(
+			[ID],
+			[StudentID],
+			[FullName],
+			[Gender],
+			[BirthDate],
+			[BirthPlace],
+			[FatherName],
+			[FatherJob],
+			[MotherName],
+			[MotherJob],
+			[CurrentPlace],
+			[Contact],
+			[Photo],
+			[CreatedBy],
+			[CreatedDate])
+		VALUES (@Id,@StudentID,@FullName,@Gender,@BirthDate,@BirthPlace,@FatherName,@FatherJob,@MotherName,@MotherJob,@CurrentPlace,@Contact,@Photo,@CreatedBy,@CreatedDate)
+END
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UPDATE_STUDENT]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].UPDATE_STUDENT
+GO
+CREATE PROCEDURE UPDATE_STUDENT( 
+								@Id	UNIQUEIDENTIFIER,
+								@StudentID NVARCHAR(255),
+								@FullName NVARCHAR(255),
+								@Gender NVARCHAR(10),
+								@BirthDate DATETIME,
+								@BirthPlace NVARCHAR(255),
+								@FatherName NVARCHAR(255),
+								@FatherJob NVARCHAR(255),
+								@MotherName NVARCHAR(255),
+								@MotherJob NVARCHAR(255),
+								@CurrentPlace NVARCHAR(255),
+								@Contact NVARCHAR(255),
+								@Photo VARBINARY(MAX),
+								@CreatedBy NVARCHAR(255),
+								@CreatedDate DATETIME
+								)
+AS
+BEGIN
+	UPDATE tbStudent SET 
+			[StudentID] = @StudentID
+			,[FullName] = @FullName
+			,[Gender] = @Gender
+			,[BirthDate] = @BirthDate
+			,[BirthPlace] = @BirthPlace
+			,[FatherName] = @FatherName
+			,[FatherJob] = @FatherJob
+			,[MotherName] = @MotherName
+			,[MotherJob] = @MotherJob
+			,[CurrentPlace] = @CurrentPlace
+			,[Contact] = @Contact
+			,[Photo] = @Photo
+			,[CreatedBy] = @CreatedBy
+			,[CreatedDate] = @CreatedDate
+			WHERE [ID] = @Id
+END
+
+/*tbClASS*/
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[INSERT_CLASS]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].INSERT_CLASS
+GO
+CREATE PROCEDURE INSERT_CLASS(
+								@Id UNIQUEIDENTIFIER
+								,@Name NVARCHAR(255)
+								,@CreatedBy NVARCHAR(255)
+								,@CreatedDate DATETIME
+							)
+					AS 
+					BEGIN
+					INSERT INTO tbClass(
+							[ID]
+							,[Name]
+							,[CreatedBy]
+							,[CreatedDate]
+						)
+						VALUES (@Id, @Name,@CreatedBy,@CreatedDate)
+END
+GO
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UPDATE_CLASS]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].UPDATE_CLASS
+GO
+CREATE PROCEDURE UPDATE_CLASS(
+								@Id UNIQUEIDENTIFIER
+								,@Name NVARCHAR(255)
+								,@CreatedBy NVARCHAR(255)
+								,@CreatedDate DATETIME
+							)
+					AS 
+					BEGIN
+					UPDATE tbClass SET
+							[Name] = @Name
+							,[CreatedBy] = @CreatedBy
+							,[CreatedDate] = @CreatedDate 
+						WHERE [ID] = @Id
+END
+GO
+/*tbSubject*/
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[INSERT_SUBJECT]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].INSERT_SUBJECT
+GO
+CREATE PROCEDURE INSERT_SUBJECT(
+								@Id	UNIQUEIDENTIFIER
+								,@Name NVARCHAR(255)
+								,@CreatedBy NVARCHAR(255)
+								,@CreatedDate DATETIME
+								)
+					AS 
+					BEGIN
+					INSERT INTO tbSubject(
+							[ID]
+							,[Name]
+							,[CreatedBy]
+							,[CreatedDate]
+						)
+						VALUES (@Id, @Name,@CreatedBy,@CreatedDate)
+END
+Go
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UPDATE_SUBJECT]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].UPDATE_SUBJECT
+GO
+CREATE PROCEDURE UPDATE_SUBJECT(
+								@Id UNIQUEIDENTIFIER
+								,@Name NVARCHAR(255)
+								,@CreatedBy NVARCHAR(255)
+								,@CreatedDate DATETIME
+							)
+					AS 
+					BEGIN
+					UPDATE tbClass SET
+							[Name] = @Name
+							,[CreatedBy] = @CreatedBy
+							,[CreatedDate] = @CreatedDate 
+						WHERE [ID] = @Id
+END
+GO
+/*tbTeacher*/
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[INSERT_TEACHER]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].INSERT_TEACHER
+GO
+CREATE PROCEDURE INSERT_TEACHER(
+								@Id	UNIQUEIDENTIFIER
+								,@SubjectId UNIQUEIDENTIFIER
+								,@Name NVARCHAR(255)
+								,@Gender NVARCHAR(255)
+								,@Phone NVARCHAR(255)
+								,@CreatedBy NVARCHAR(255)
+								,@CreatedDate DATETIME
+								)
+					AS 
+					BEGIN
+					INSERT INTO tbTeacher(
+							[ID]
+							,[SubjectID]
+							,[Name]
+							,[Gender]
+							,[Phone]
+							,[CreatedBy]
+							,[CreatedDate]
+						)
+						VALUES (@Id,@SubjectId, @Name, @Gender,@Phone,@CreatedBy,@CreatedDate)
+END
+Go
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UPDATE_TEACHER]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].UPDATE_TEACHER
+GO
+CREATE PROCEDURE UPDATE_TEACHER(
+								@Id	UNIQUEIDENTIFIER
+								,@SubjectId UNIQUEIDENTIFIER
+								,@Name NVARCHAR(255)
+								,@Gender NVARCHAR(255)
+								,@Phone NVARCHAR(255)
+								,@CreatedBy NVARCHAR(255)
+								,@CreatedDate DATETIME
+								)
+					AS 
+					BEGIN
+					UPDATE tbTeacher SET
+							
+							[SubjectID] = @SubjectId
+							,[Name] = @Name
+							,[Gender] =  @Gender
+							,[Phone] = @Phone
+							,[CreatedBy] = @CreatedBy
+							,[CreatedDate] = @CreatedDate
+						WHERE [ID] = @Id
+END
