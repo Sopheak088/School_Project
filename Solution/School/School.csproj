@@ -79,6 +79,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Database\Table.docx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -92,13 +93,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Database\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\find 24x24.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\Pheak.sql" />
+    <Content Include="Database\Phoan.sql" />
     <Content Include="Resources\16\12.png" />
     <Content Include="Resources\16\36.png" />
     <Content Include="Resources\16\about.png" />
