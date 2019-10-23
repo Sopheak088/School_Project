@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseObject\BaseClass.cs" />
+    <Compile Include="BaseObject\FilterEntity.cs" />
     <Compile Include="Company\FrmCompany.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,10 +66,25 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Connect.cs" />
+    <Compile Include="Helper\Helpers.cs" />
+    <Compile Include="Helper\SelectPicture.cs" />
+    <Compile Include="MyPicture.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyPicture.designer.cs">
+      <DependentUpon>MyPicture.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Company\FrmCompany.resx">
+      <DependentUpon>FrmCompany.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Company\FrmCompanyList.resx">
       <DependentUpon>FrmCompanyList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyPicture.resx">
+      <DependentUpon>MyPicture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

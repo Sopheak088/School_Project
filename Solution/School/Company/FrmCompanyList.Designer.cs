@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelFilter = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtKeyword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,13 +46,19 @@
             this.rdoByDate = new System.Windows.Forms.RadioButton();
             this.rdoAllDay = new System.Windows.Forms.RadioButton();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCompany = new System.Windows.Forms.DataGridView();
+            this.ctmMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnView = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panelFilter.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).BeginInit();
+            this.ctmMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelFilter
@@ -73,19 +81,7 @@
             this.groupBox1.Size = new System.Drawing.Size(1024, 59);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filter";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Image = global::School.Properties.Resources.find_24x24;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(874, 23);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(86, 29);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "ស្វែងរក";
-            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.groupBox1.Text = "ដើម្បីស្វែងរក";
             // 
             // panel2
             // 
@@ -194,6 +190,7 @@
             this.rdoByDate.TabIndex = 1;
             this.rdoByDate.Text = "តាមថ្ងៃ";
             this.rdoByDate.UseVisualStyleBackColor = true;
+            this.rdoByDate.CheckedChanged += new System.EventHandler(this.RdoByDate_CheckedChanged);
             // 
             // rdoAllDay
             // 
@@ -206,24 +203,92 @@
             this.rdoAllDay.TabStop = true;
             this.rdoAllDay.Text = "គ្រប់ថ្ងៃ";
             this.rdoAllDay.UseVisualStyleBackColor = true;
+            this.rdoAllDay.CheckedChanged += new System.EventHandler(this.RdoAllDay_CheckedChanged);
             // 
             // panelMain
             // 
-            this.panelMain.Controls.Add(this.dataGridView1);
+            this.panelMain.Controls.Add(this.dgvCompany);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 62);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1024, 201);
             this.panelMain.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgvCompany
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1024, 201);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvCompany.AllowUserToAddRows = false;
+            this.dgvCompany.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvCompany.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCompany.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCompany.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCompany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompany.ContextMenuStrip = this.ctmMenu;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Khmer OS Battambang", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCompany.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCompany.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCompany.EnableHeadersVisualStyles = false;
+            this.dgvCompany.Location = new System.Drawing.Point(0, 0);
+            this.dgvCompany.Name = "dgvCompany";
+            this.dgvCompany.ReadOnly = true;
+            this.dgvCompany.RowHeadersVisible = false;
+            this.dgvCompany.RowTemplate.Height = 80;
+            this.dgvCompany.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCompany.Size = new System.Drawing.Size(1024, 201);
+            this.dgvCompany.TabIndex = 0;
+            this.dgvCompany.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCompany_CellClick);
+            // 
+            // ctmMenu
+            // 
+            this.ctmMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnNew,
+            this.btnEdit,
+            this.btnView});
+            this.ctmMenu.Name = "ctmMenu";
+            this.ctmMenu.Size = new System.Drawing.Size(181, 92);
+            // 
+            // btnNew
+            // 
+            this.btnNew.Image = global::School.Properties.Resources.add_16x16;
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(180, 22);
+            this.btnNew.Text = "New Company";
+            this.btnNew.Click += new System.EventHandler(this.BtnNew_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::School.Properties.Resources.edit;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(180, 22);
+            this.btnEdit.Text = "Edit Company";
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
+            // 
+            // btnView
+            // 
+            this.btnView.Image = global::School.Properties.Resources.document_selected;
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(180, 22);
+            this.btnView.Text = "View Company";
+            this.btnView.Click += new System.EventHandler(this.BtnView_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Image = global::School.Properties.Resources.find_24x24;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(874, 23);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(86, 29);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "ស្វែងរក";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // FrmCompanyList
             // 
@@ -240,6 +305,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CompanyList";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmCompanyList_Load);
             this.panelFilter.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -247,7 +313,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).EndInit();
+            this.ctmMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -270,6 +337,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton rdoByDate;
         private System.Windows.Forms.RadioButton rdoAllDay;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCompany;
+        private System.Windows.Forms.ContextMenuStrip ctmMenu;
+        private System.Windows.Forms.ToolStripMenuItem btnNew;
+        private System.Windows.Forms.ToolStripMenuItem btnEdit;
+        private System.Windows.Forms.ToolStripMenuItem btnView;
     }
 }
