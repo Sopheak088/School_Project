@@ -33,6 +33,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dgvStudent = new System.Windows.Forms.DataGridView();
+            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtKeyword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,13 +51,110 @@
             this.label1 = new System.Windows.Forms.Label();
             this.rdoByDate = new System.Windows.Forms.RadioButton();
             this.rdoAllDay = new System.Windows.Forms.RadioButton();
-            this.dgvStudent = new System.Windows.Forms.DataGridView();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvStudent
+            // 
+            this.dgvStudent.AllowUserToAddRows = false;
+            this.dgvStudent.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvStudent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvStudent.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Khmer OS Battambang", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStudent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudent.ContextMenuStrip = this.cmsMenu;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Khmer OS Battambang", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStudent.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvStudent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvStudent.EnableHeadersVisualStyles = false;
+            this.dgvStudent.Location = new System.Drawing.Point(0, 0);
+            this.dgvStudent.Name = "dgvStudent";
+            this.dgvStudent.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Khmer OS Battambang", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStudent.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvStudent.RowHeadersVisible = false;
+            this.dgvStudent.RowTemplate.Height = 80;
+            this.dgvStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvStudent.Size = new System.Drawing.Size(1113, 615);
+            this.dgvStudent.TabIndex = 0;
+            this.dgvStudent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStudent_CellContentClick);
+            // 
+            // cmsMenu
+            // 
+            this.cmsMenu.Name = "cmsMenu";
+            this.cmsMenu.Size = new System.Drawing.Size(61, 4);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dgvStudent);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1113, 615);
+            this.panel3.TabIndex = 7;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.groupBox1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1113, 64);
+            this.panel4.TabIndex = 9;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1113, 59);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ដើម្បីស្វែងរក";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Image = global::School.Properties.Resources.find_24x24;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(874, 23);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(86, 29);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "ស្វែងរក";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -62,7 +165,7 @@
             this.panel2.Location = new System.Drawing.Point(473, 16);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(395, 39);
-            this.panel2.TabIndex = 5;
+            this.panel2.TabIndex = 1;
             // 
             // txtKeyword
             // 
@@ -94,7 +197,7 @@
             // 
             this.rdoActive.AutoSize = true;
             this.rdoActive.Checked = true;
-            this.rdoActive.Location = new System.Drawing.Point(3, 7);
+            this.rdoActive.Location = new System.Drawing.Point(6, 8);
             this.rdoActive.Name = "rdoActive";
             this.rdoActive.Size = new System.Drawing.Size(103, 28);
             this.rdoActive.TabIndex = 6;
@@ -113,7 +216,7 @@
             this.panel1.Location = new System.Drawing.Point(6, 16);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(451, 39);
-            this.panel1.TabIndex = 3;
+            this.panel1.TabIndex = 0;
             // 
             // dtpTo
             // 
@@ -173,81 +276,13 @@
             this.rdoAllDay.Text = "គ្រប់ថ្ងៃ";
             this.rdoAllDay.UseVisualStyleBackColor = true;
             // 
-            // dgvStudent
-            // 
-            this.dgvStudent.AllowUserToAddRows = false;
-            this.dgvStudent.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvStudent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvStudent.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Khmer OS Battambang", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudent.ContextMenuStrip = this.cmsMenu;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Khmer OS Battambang", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudent.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvStudent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvStudent.EnableHeadersVisualStyles = false;
-            this.dgvStudent.Location = new System.Drawing.Point(0, 0);
-            this.dgvStudent.Name = "dgvStudent";
-            this.dgvStudent.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Khmer OS Battambang", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudent.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvStudent.RowHeadersVisible = false;
-            this.dgvStudent.RowTemplate.Height = 80;
-            this.dgvStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudent.Size = new System.Drawing.Size(965, 428);
-            this.dgvStudent.TabIndex = 0;
-            this.dgvStudent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStudent_CellContentClick);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Image = global::School.Properties.Resources.find_24x24;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(874, 23);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(86, 29);
-            this.btnSearch.TabIndex = 6;
-            this.btnSearch.Text = "ស្វែងរក";
-            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // cmsMenu
-            // 
-            this.cmsMenu.Name = "cmsMenu";
-            this.cmsMenu.Size = new System.Drawing.Size(61, 4);
-            // 
             // FrmStudentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 428);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgvStudent);
+            this.ClientSize = new System.Drawing.Size(1113, 615);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
             this.Font = new System.Drawing.Font("Khmer OS Battambang", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
@@ -258,17 +293,24 @@
             this.Text = "FrmStudentList";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmStudentList_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+        private System.Windows.Forms.DataGridView dgvStudent;
+        private System.Windows.Forms.ContextMenuStrip cmsMenu;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtKeyword;
@@ -282,7 +324,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton rdoByDate;
         private System.Windows.Forms.RadioButton rdoAllDay;
-        private System.Windows.Forms.DataGridView dgvStudent;
-        private System.Windows.Forms.ContextMenuStrip cmsMenu;
     }
 }
