@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -46,6 +47,7 @@
             this.rdoAllDay = new System.Windows.Forms.RadioButton();
             this.dgvStudent = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
@@ -191,6 +193,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvStudent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudent.ContextMenuStrip = this.cmsMenu;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Khmer OS Battambang", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -199,8 +202,9 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvStudent.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvStudent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStudent.EnableHeadersVisualStyles = false;
-            this.dgvStudent.Location = new System.Drawing.Point(6, 61);
+            this.dgvStudent.Location = new System.Drawing.Point(0, 0);
             this.dgvStudent.Name = "dgvStudent";
             this.dgvStudent.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -214,8 +218,9 @@
             this.dgvStudent.RowHeadersVisible = false;
             this.dgvStudent.RowTemplate.Height = 80;
             this.dgvStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudent.Size = new System.Drawing.Size(1148, 350);
-            this.dgvStudent.TabIndex = 4;
+            this.dgvStudent.Size = new System.Drawing.Size(965, 428);
+            this.dgvStudent.TabIndex = 0;
+            this.dgvStudent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStudent_CellContentClick);
             // 
             // btnSearch
             // 
@@ -229,11 +234,16 @@
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
+            // cmsMenu
+            // 
+            this.cmsMenu.Name = "cmsMenu";
+            this.cmsMenu.Size = new System.Drawing.Size(61, 4);
+            // 
             // FrmStudentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1151, 409);
+            this.ClientSize = new System.Drawing.Size(965, 428);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -273,5 +283,6 @@
         private System.Windows.Forms.RadioButton rdoByDate;
         private System.Windows.Forms.RadioButton rdoAllDay;
         private System.Windows.Forms.DataGridView dgvStudent;
+        private System.Windows.Forms.ContextMenuStrip cmsMenu;
     }
 }

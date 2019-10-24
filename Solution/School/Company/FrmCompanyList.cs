@@ -172,5 +172,10 @@ namespace School.Company
                 }
             }
         }
+
+        private void GroupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

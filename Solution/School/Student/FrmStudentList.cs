@@ -56,7 +56,7 @@ namespace School.Student
             StringBuilder query = new StringBuilder();
             query.Append("SELECT [StudentID] AS អត្តលេខ,[FullName] AS ឈ្មោះពេញ,[Gender]​ AS ភេទ,")
                 .AppendFormat("[BirthDate] AS ថ្ងៃខែឆ្នាំកំណើត,[BirthPlace] AS ទីកន្លៃងកំណើត,[FatherName] AS ឪពុកឈ្មោះ,")
-                .AppendFormat("[FatherJob] AS មុនរបរ,[MotherName] AS ម្តាយឈ្មោះ,[MotherJob] AS មុខរបរ,[CurrentPlace] AS ទីលំនៅបច្ចុប្បន្ន​​,[CreatedBy] AS បង្កើតដោយ,")
+                .AppendFormat("[FatherJob] AS មុនរបរ,[MotherName] AS ម្តាយឈ្មោះ,[MotherJob] AS មុខរបរ,[CurrentPlace] AS ទីលំនៅបច្ចុប្បន្ន,​​[Photo] AS រូប,[CreatedBy] AS បង្កើតដោយ,")
                 .AppendFormat("[CreatedDate] AS ថ្ងៃបង្កើត,[UpdatedBy] AS កែប្រែដោយ,[UpdatedDate] AS ថ្ងៃកែប្រែ ")
                 .AppendFormat("FROM [tbStudent] ")
                 .AppendFormat("WHERE Active = '{0}'", filterEntity.Active);
@@ -101,6 +101,11 @@ namespace School.Student
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void DgvStudent_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
