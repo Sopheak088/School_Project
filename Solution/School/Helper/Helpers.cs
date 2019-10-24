@@ -90,5 +90,10 @@ namespace School.Helper
             }
             return (b);
         }
+
+        internal static bool CheckEmpty(object errorProvider1, object txtNameInKhmer, object txtNameInEnglish, object txtEmail, object txtPhone, object txtLocation)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

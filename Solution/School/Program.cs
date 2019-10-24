@@ -1,4 +1,5 @@
 ﻿using School.Company;
+using School.Student;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace School
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmCompanyList());
+            Application.Run(new FrmStudent());
         }
     }
 }

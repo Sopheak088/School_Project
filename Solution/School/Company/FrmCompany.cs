@@ -153,5 +153,10 @@ namespace School.Company
         {
             this.Close();
         }
+
+        private void FrmCompany_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
