@@ -66,12 +66,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Student\FrmStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Student\FrmStudent.Designer.cs">
-      <DependentUpon>FrmStudent.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helper\Connect.cs" />
     <Compile Include="Helper\Helpers.cs" />
     <Compile Include="Helper\SelectPicture.cs" />
