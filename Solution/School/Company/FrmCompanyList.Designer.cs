@@ -286,13 +286,13 @@
             this.btnEdit,
             this.btnView});
             this.ctmMenu.Name = "ctmMenu";
-            this.ctmMenu.Size = new System.Drawing.Size(155, 70);
+            this.ctmMenu.Size = new System.Drawing.Size(181, 92);
             // 
             // btnNew
             // 
             this.btnNew.Image = global::School.Properties.Resources.add_16x16;
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(154, 22);
+            this.btnNew.Size = new System.Drawing.Size(180, 22);
             this.btnNew.Text = "New Company";
             this.btnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
@@ -300,7 +300,7 @@
             // 
             this.btnEdit.Image = global::School.Properties.Resources.edit;
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(154, 22);
+            this.btnEdit.Size = new System.Drawing.Size(180, 22);
             this.btnEdit.Text = "Edit Company";
             this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
@@ -308,7 +308,7 @@
             // 
             this.btnView.Image = global::School.Properties.Resources.document_selected;
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(154, 22);
+            this.btnView.Size = new System.Drawing.Size(180, 22);
             this.btnView.Text = "View Company";
             this.btnView.Click += new System.EventHandler(this.BtnView_Click);
             // 
