@@ -18,7 +18,7 @@ namespace School
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmStudent());
+            Application.Run(new FrmStudentList());
         }
     }
 }

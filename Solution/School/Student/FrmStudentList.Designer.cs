@@ -199,9 +199,8 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvStudent.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvStudent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStudent.EnableHeadersVisualStyles = false;
-            this.dgvStudent.Location = new System.Drawing.Point(0, 0);
+            this.dgvStudent.Location = new System.Drawing.Point(6, 61);
             this.dgvStudent.Name = "dgvStudent";
             this.dgvStudent.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -215,7 +214,7 @@
             this.dgvStudent.RowHeadersVisible = false;
             this.dgvStudent.RowTemplate.Height = 80;
             this.dgvStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudent.Size = new System.Drawing.Size(970, 287);
+            this.dgvStudent.Size = new System.Drawing.Size(1148, 350);
             this.dgvStudent.TabIndex = 4;
             // 
             // btnSearch
@@ -234,7 +233,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(970, 287);
+            this.ClientSize = new System.Drawing.Size(1151, 409);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -245,7 +244,10 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmStudentList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmStudentList";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmStudentList_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
