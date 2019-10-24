@@ -83,6 +83,12 @@
     <Compile Include="Student\FrmStudent.Designer.cs">
       <DependentUpon>FrmStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student\FrmStudentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\FrmStudentList.Designer.cs">
+      <DependentUpon>FrmStudentList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Company\FrmCompany.resx">
       <DependentUpon>FrmCompany.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +110,9 @@
     </Compile>
     <EmbeddedResource Include="Student\FrmStudent.resx">
       <DependentUpon>FrmStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\FrmStudentList.resx">
+      <DependentUpon>FrmStudentList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Database\Table.docx" />
     <None Include="Properties\Settings.settings">

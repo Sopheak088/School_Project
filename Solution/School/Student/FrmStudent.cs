@@ -84,6 +84,7 @@ namespace School.Student
                 com.Parameters.AddWithValue("@MotherName", txtMotherName.Text);
                 com.Parameters.AddWithValue("@MotherJob", txtMotherJob.Text);
                 com.Parameters.AddWithValue("@CurrentPlace", txtCurrentPlace.Text);
+                com.Parameters.AddWithValue("@Contact", txtContact.Text);
                 com.Parameters.AddWithValue("@Photo", myPicture1.GetByteArrayFromBrowse());
                 com.Parameters.AddWithValue("@CreatedBy", createBy);
                 com.Parameters.AddWithValue("@CreatedDate", DateTime.Now);
@@ -103,31 +104,35 @@ namespace School.Student
         {
             try
             {
-                var com = new SqlCommand("UPDATE_STUDENT", Connect.ToDatabase());
-                com.CommandType = CommandType.StoredProcedure;
-                com.Parameters.AddWithValue("@Id", Guid.NewGuid());
-                com.Parameters.AddWithValue("@StudentID", txtStudentID.Text);
-                com.Parameters.AddWithValue("@FullName", txtStudentName.Text);
-                if (rdWomen.Checked == true)
+                if (StudentID != Guid.Empty)
                 {
-                    com.Parameters.AddWithValue("@Gender", rdWomen.Text);
+                    var com = new SqlCommand("UPDATE_STUDENT", Connect.ToDatabase());
+                    com.CommandType = CommandType.StoredProcedure;
+                    com.Parameters.AddWithValue("@Id", StudentID);
+                    com.Parameters.AddWithValue("@StudentID", txtStudentID.Text);
+                    com.Parameters.AddWithValue("@FullName", txtStudentName.Text);
+                    if (rdWomen.Checked == true)
+                    {
+                        com.Parameters.AddWithValue("@Gender", rdWomen.Text);
+                    }
+                    else if (rdMan.Checked == true)
+                    {
+                        com.Parameters.AddWithValue("@Gender", rdMan.Text);
+                    }
+                    com.Parameters.AddWithValue("@BirthDate", dtpBirthDate.Value);
+                    com.Parameters.AddWithValue("@BirthPlace", txtBirthPlace.Text);
+                    com.Parameters.AddWithValue("@FatherName", txtFatherName.Text);
+                    com.Parameters.AddWithValue("@FatherJob", txtFatherJob.Text);
+                    com.Parameters.AddWithValue("@MotherName", txtMotherName.Text);
+                    com.Parameters.AddWithValue("@MotherJob", txtMotherJob.Text);
+                    com.Parameters.AddWithValue("@CurrentPlace", txtCurrentPlace.Text);
+                    com.Parameters.AddWithValue("@Contact", txtContact.Text);
+                    com.Parameters.AddWithValue("@Photo", myPicture1.GetByteArrayFromBrowse());
+                    com.Parameters.AddWithValue("@CreatedBy", UpdateBy);
+                    com.Parameters.AddWithValue("@CreatedDate", DateTime.Now);
+                    com.Parameters.AddWithValue("@Active", chkActive.Checked);
+                    com.ExecuteNonQuery();
                 }
-                else if (rdMan.Checked == true)
-                {
-                    com.Parameters.AddWithValue("@Gender", rdMan.Text);
-                }
-                com.Parameters.AddWithValue("@BirthDate", dtpBirthDate.Value);
-                com.Parameters.AddWithValue("@BirthPlace", txtBirthPlace.Text);
-                com.Parameters.AddWithValue("@FatherName", txtFatherName.Text);
-                com.Parameters.AddWithValue("@FatherJob", txtFatherJob.Text);
-                com.Parameters.AddWithValue("@MotherName", txtMotherName.Text);
-                com.Parameters.AddWithValue("@MotherJob", txtMotherJob.Text);
-                com.Parameters.AddWithValue("@CurrentPlace", txtCurrentPlace.Text);
-                com.Parameters.AddWithValue("@Photo", myPicture1.GetByteArrayFromBrowse());
-                com.Parameters.AddWithValue("@CreatedBy", UpdateBy);
-                com.Parameters.AddWithValue("@CreatedDate", DateTime.Now);
-                com.Parameters.AddWithValue("@Active", chkActive.Checked);
-                com.ExecuteNonQuery();
             }
             catch (Exception exception)
             {
