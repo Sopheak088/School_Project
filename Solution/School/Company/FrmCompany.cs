@@ -80,7 +80,7 @@ namespace School.Company
                 var com = new SqlCommand("UPDATE_COMPANY", Connect.ToDatabase());
                 com.CommandType = CommandType.StoredProcedure;
                 com.Parameters.AddWithValue("@Id", Guid.NewGuid());
-                com.Parameters.AddWithValue("@NameInKhmer", txtNameInEnglish.Text);
+                com.Parameters.AddWithValue("@NameInKhmer", txtNameInKhmer.Text);
                 com.Parameters.AddWithValue("@NameInEnglish", txtNameInEnglish.Text);
                 com.Parameters.AddWithValue("@Email", txtEmail.Text);
                 com.Parameters.AddWithValue("@Phone", txtPhone.Text);
