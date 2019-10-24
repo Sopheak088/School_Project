@@ -16,8 +16,6 @@ namespace School.Student
     {
         private Guid StudentID = Guid.Empty;
         public bool SaveCompleted = false;
-        private object exception;
-        private object errorProvider1;
 
         public FrmStudent(Guid? id = null, bool canEdit = true)
         {
@@ -92,7 +90,7 @@ namespace School.Student
                 com.Parameters.AddWithValue("@Active", chkActive.Checked);
                 com.ExecuteNonQuery();
             }
-            catch {
+            catch (Exception exception) {
                 MessageBox.Show(exception.ToString(), @"Could not find Stored Procedure", MessageBoxButtons.RetryCancel);
                 }
             finally
@@ -131,7 +129,7 @@ namespace School.Student
                 com.Parameters.AddWithValue("@Active", chkActive.Checked);
                 com.ExecuteNonQuery();
             }
-            catch
+            catch (Exception exception)
             {
                 MessageBox.Show(exception.ToString(), @"Could not find Stored Procedure", MessageBoxButtons.RetryCancel);
             }
@@ -143,14 +141,14 @@ namespace School.Student
 
         private bool Save()
         {
-            if (Helpers.CheckEmpty(errorProvider2, txtStudentID, txtStudentName, txtFatherName, txtFatherJob, txtMotherName, txtMotherJob, txtCurrentPlace))
+            if (Helpers.CheckEmpty(errorProvider1, txtStudentID, txtStudentName, txtFatherName, txtFatherJob, txtMotherName, txtMotherJob, txtCurrentPlace))
             {
                 return false;
             }
             else
             {
                 SaveCompleted = true;
-                errorProvider2.Clear();
+                errorProvider1.Clear();
 
                 if (StudentID != Guid.Empty)
                 {

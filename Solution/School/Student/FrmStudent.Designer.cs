@@ -58,8 +58,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.myPicture1 = new School.MyPicture();
             this.myPicture2 = new School.MyPicture();
-            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // chkActive
@@ -336,9 +336,9 @@
             this.myPicture2.Size = new System.Drawing.Size(137, 165);
             this.myPicture2.TabIndex = 56;
             // 
-            // errorProvider2
+            // errorProvider1
             // 
-            this.errorProvider2.ContainerControl = this;
+            this.errorProvider1.ContainerControl = this;
             // 
             // FrmStudent
             // 
@@ -382,7 +382,7 @@
             this.Name = "FrmStudent";
             this.Text = "FrmStudent";
             this.Load += new System.EventHandler(this.FrmStudent_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,6 +419,6 @@
         private System.Windows.Forms.Label label11;
         private MyPicture myPicture1;
         private MyPicture myPicture2;
-        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
