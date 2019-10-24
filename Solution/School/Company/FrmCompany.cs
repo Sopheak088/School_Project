@@ -33,8 +33,8 @@ namespace School.Company
                     while (reader.Read())
                     {
                         this.Text = this.Text + companyID;
-                        txtNameInKhmer.Text = reader["NameInEnglish"].ToString();
-                        txtNameInEnglish.Text = reader["NameInKhmer"].ToString();
+                        txtNameInKhmer.Text = reader["NameInKhmer"].ToString();
+                        txtNameInEnglish.Text = reader["NameInEnglish"].ToString();
                         txtEmail.Text = reader["Email"].ToString();
                         txtPhone.Text = reader["Phone"].ToString();
                         txtLocation.Text = reader["Location"].ToString();
@@ -52,7 +52,7 @@ namespace School.Company
                 var com = new SqlCommand("INSERT_COMPANY", Connect.ToDatabase());
                 com.CommandType = CommandType.StoredProcedure;
                 com.Parameters.AddWithValue("@Id", Guid.NewGuid());
-                com.Parameters.AddWithValue("@NameInKhmer", txtNameInEnglish.Text);
+                com.Parameters.AddWithValue("@NameInKhmer", txtNameInKhmer.Text);
                 com.Parameters.AddWithValue("@NameInEnglish", txtNameInEnglish.Text);
                 com.Parameters.AddWithValue("@Email", txtEmail.Text);
                 com.Parameters.AddWithValue("@Phone", txtPhone.Text);
@@ -77,19 +77,22 @@ namespace School.Company
         {
             try
             {
-                var com = new SqlCommand("UPDATE_COMPANY", Connect.ToDatabase());
-                com.CommandType = CommandType.StoredProcedure;
-                com.Parameters.AddWithValue("@Id", Guid.NewGuid());
-                com.Parameters.AddWithValue("@NameInKhmer", txtNameInKhmer.Text);
-                com.Parameters.AddWithValue("@NameInEnglish", txtNameInEnglish.Text);
-                com.Parameters.AddWithValue("@Email", txtEmail.Text);
-                com.Parameters.AddWithValue("@Phone", txtPhone.Text);
-                com.Parameters.AddWithValue("@Location", txtLocation.Text);
-                com.Parameters.AddWithValue("@Active", chkActive.Checked);
-                com.Parameters.AddWithValue("@Logo", myPicture1.GetByteArrayFromBrowse());
-                com.Parameters.AddWithValue("@UpdatedBy", updatedBy);
-                com.Parameters.AddWithValue("@UpdatedDate", DateTime.Now);
-                com.ExecuteNonQuery();
+                if (companyID != Guid.Empty)
+                {
+                    var com = new SqlCommand("UPDATE_COMPANY", Connect.ToDatabase());
+                    com.CommandType = CommandType.StoredProcedure;
+                    com.Parameters.AddWithValue("@Id", companyID);
+                    com.Parameters.AddWithValue("@NameInKhmer", txtNameInKhmer.Text);
+                    com.Parameters.AddWithValue("@NameInEnglish", txtNameInEnglish.Text);
+                    com.Parameters.AddWithValue("@Email", txtEmail.Text);
+                    com.Parameters.AddWithValue("@Phone", txtPhone.Text);
+                    com.Parameters.AddWithValue("@Location", txtLocation.Text);
+                    com.Parameters.AddWithValue("@Active", chkActive.Checked);
+                    com.Parameters.AddWithValue("@Logo", myPicture1.GetByteArrayFromBrowse());
+                    com.Parameters.AddWithValue("@UpdatedBy", updatedBy);
+                    com.Parameters.AddWithValue("@UpdatedDate", DateTime.Now);
+                    com.ExecuteNonQuery();
+                }
             }
             catch (Exception exception)
             {

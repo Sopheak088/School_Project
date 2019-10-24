@@ -31,8 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelFilter = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtKeyword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,7 +53,6 @@
             this.btnNew = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.btnView = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.panelFilter.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -82,6 +83,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ដើម្បីស្វែងរក";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Image = global::School.Properties.Resources.find_24x24;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(874, 23);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(86, 29);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "ស្វែងរក";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // panel2
             // 
@@ -218,20 +232,30 @@
             // 
             this.dgvCompany.AllowUserToAddRows = false;
             this.dgvCompany.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCompany.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCompany.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCompany.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Khmer OS Battambang", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCompany.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCompany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompany.ContextMenuStrip = this.ctmMenu;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Khmer OS Battambang", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCompany.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Khmer OS Battambang", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCompany.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCompany.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCompany.EnableHeadersVisualStyles = false;
             this.dgvCompany.Location = new System.Drawing.Point(0, 0);
@@ -251,13 +275,13 @@
             this.btnEdit,
             this.btnView});
             this.ctmMenu.Name = "ctmMenu";
-            this.ctmMenu.Size = new System.Drawing.Size(181, 92);
+            this.ctmMenu.Size = new System.Drawing.Size(155, 70);
             // 
             // btnNew
             // 
             this.btnNew.Image = global::School.Properties.Resources.add_16x16;
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(180, 22);
+            this.btnNew.Size = new System.Drawing.Size(154, 22);
             this.btnNew.Text = "New Company";
             this.btnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
@@ -265,7 +289,7 @@
             // 
             this.btnEdit.Image = global::School.Properties.Resources.edit;
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(180, 22);
+            this.btnEdit.Size = new System.Drawing.Size(154, 22);
             this.btnEdit.Text = "Edit Company";
             this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
@@ -273,22 +297,9 @@
             // 
             this.btnView.Image = global::School.Properties.Resources.document_selected;
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(180, 22);
+            this.btnView.Size = new System.Drawing.Size(154, 22);
             this.btnView.Text = "View Company";
             this.btnView.Click += new System.EventHandler(this.BtnView_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Image = global::School.Properties.Resources.find_24x24;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(874, 23);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(86, 29);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "ស្វែងរក";
-            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // FrmCompanyList
             // 
