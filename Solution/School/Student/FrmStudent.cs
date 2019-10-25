@@ -24,7 +24,7 @@ namespace School.Student
             if (!id.Equals(null))
             {
                 StudentID = (Guid)id;
-                string query = string.Format("SELECT * FROM COMPANY WHERE ID='{0}'", id);
+                string query = string.Format("SELECT * FROM tbStudent WHERE ID='{0}'", id);
                 SqlCommand cmd = new SqlCommand(query, Connect.ToDatabase());
                 cmd.CommandTimeout = 10000;
                 var reader = cmd.ExecuteReader();
@@ -37,26 +37,26 @@ namespace School.Student
                         this.Text = this.Text + StudentID;
                         txtStudentID.Text = reader["StudentID"].ToString();
                         txtStudentName.Text = reader["FullName"].ToString();
-                        if (rdWomen.Checked == true)
+                        if (rdWomen.Text.Equals(reader["Gender"].ToString()))
                         {
-                            rdWomen.Text = reader["Gender"].ToString();
+                            rdWomen.Checked = true;
                         }
                         else
                         {
-                            rdMan.Text = reader["Gender"].ToString();
+                            rdMan.Checked = true;
 
                         }
                         dtpBirthDate.Text = reader["BirthDate"].ToString();
                         txtBirthPlace.Text = reader["BirthPlace"].ToString();
                         txtFatherName.Text = reader["FatherName"].ToString();
-                        txtFatherName.Text = reader["FatherJob"].ToString();
+                        txtFatherJob.Text = reader["FatherJob"].ToString();
                         txtMotherName.Text = reader["MotherName"].ToString();
                         txtMotherJob.Text = reader["MotherJob"].ToString();
                         txtCurrentPlace.Text = reader["CurrentPlace"].ToString();
                         txtContact.Text = reader["Contact"].ToString();
+                        byte[] ph = SelectPicture.GetPhoto("Photo", "tbStudent", StudentID);
+                        myPicture1.SetImage(Helpers.ByteArrayToImage(ph));
                         chkActive.Checked = bool.Parse(reader["Active"].ToString());
-                        myPicture1.SetImage(Helpers.ByteArrayToImage(SelectPicture.GetPhoto("Photo", "tbStudent", StudentID)));
-
                     }
                 reader.Close();
             }
@@ -146,7 +146,7 @@ namespace School.Student
 
         private bool Save()
         {
-            if (Helpers.CheckEmpty(errorProvider1, txtStudentID, txtStudentName, txtFatherName, txtFatherJob, txtMotherName, txtMotherJob, txtCurrentPlace))
+            if (Helpers.CheckEmpty(errorProvider1, txtStudentID, txtStudentName,txtBirthPlace, txtFatherName, txtFatherJob, txtMotherName, txtMotherJob, txtCurrentPlace))
             {
                 return false;
             }

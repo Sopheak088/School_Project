@@ -20,7 +20,7 @@ namespace School.Student
         {
             InitializeComponent();
             LoadData();
-            .Opening += CtmsMenuBarOnOpening;
+            cmsMenu.Opening += CtmsMenuBarOnOpening;
         }
         private void CtmsMenuBarOnOpening(object sender, CancelEventArgs cancelEventArgs)
         {
@@ -30,19 +30,12 @@ namespace School.Student
                 btnView.Enabled = btnEdit.Enabled = true;
             }
         }
-
-        private void RdoAllDay_CheckedChanged(object sender, EventArgs e)
-        {
-            dtpFrom.Enabled = dtpTo.Enabled = false;
-        }
-
-        private void RdoByDate_CheckedChanged(object sender, EventArgs e)
-        {
-            dtpFrom.Enabled = dtpTo.Enabled = true;
-        }
+ 
         private void FrmStudentList_Load(object sender, EventArgs e)
         {
             dgvStudent.Columns["ថ្ងៃ ខែ ឆ្នាំកំណើត"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dgvStudent.Columns["ID"].Visible = false;
+            dtpFrom.Enabled = dtpTo.Enabled = false;
             //define image size stretch
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img = (DataGridViewImageColumn)dgvStudent.Columns["រូប"];
@@ -81,7 +74,7 @@ namespace School.Student
         {
             DataTable dataTable = new DataTable();
             StringBuilder query = new StringBuilder();
-            query.Append("SELECT [StudentID] AS អត្តលេខ,[FullName] AS ឈ្មោះពេញ,[Gender]​ AS ភេទ,")
+            query.Append("SELECT [ID], [StudentID] AS អត្តលេខ,[FullName] AS ឈ្មោះពេញ,[Gender]​ AS ភេទ,")
                 .AppendFormat("[BirthDate] AS [ថ្ងៃ ខែ ឆ្នាំកំណើត],[BirthPlace] AS ទីកន្លៃងកំណើត,[FatherName] AS ឪពុកឈ្មោះ,")
                 .AppendFormat("[FatherJob] AS មុនរបរ,[MotherName] AS ម្តាយឈ្មោះ,[MotherJob] AS មុខរបរ,[CurrentPlace] AS ទីលំនៅបច្ចុប្បន្ន,​​[Photo] AS រូប,[CreatedBy] AS បង្កើតដោយ,")
                 .AppendFormat("[CreatedDate] AS ថ្ងៃបង្កើត,[UpdatedBy] AS កែប្រែដោយ,[UpdatedDate] AS ថ្ងៃកែប្រែ ")
@@ -164,19 +157,34 @@ namespace School.Student
 
         private void DgvStudent_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-      
-                int i;
-                if (dgvStudent.RowCount > 0)
-                {
-                    i = e.RowIndex;
-                    if (i < 0) return;
-                    DataGridViewRow row = dgvStudent.Rows[i];
-                    getId = Guid.Parse(row.Cells[0].Value.ToString());
-                }
-           
+
+            int i;
+            if (dgvStudent.RowCount > 0)
+            {
+                i = e.RowIndex;
+                if (i < 0) return;
+                DataGridViewRow row = dgvStudent.Rows[i];
+                getId = Guid.Parse(row.Cells["ID"].Value.ToString());
+            }
+
         }
 
         private void BtnSearch_Click_1(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void RdoByDate_CheckedChanged_1(object sender, EventArgs e)
+        {
+            dtpFrom.Enabled = dtpTo.Enabled = true;
+        }
+
+        private void RdoAllDay_CheckedChanged_1(object sender, EventArgs e)
+        {
+            dtpFrom.Enabled = dtpTo.Enabled = false;
+        }
+
+        private void TxtKeyword_TextChanged(object sender, EventArgs e)
         {
             LoadData();
         }

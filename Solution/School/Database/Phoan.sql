@@ -149,7 +149,8 @@ CREATE PROCEDURE INSERT_STUDENT(
 								@Contact NVARCHAR(255),
 								@Photo VARBINARY(MAX),
 								@CreatedBy NVARCHAR(255),
-								@CreatedDate DATETIME
+								@CreatedDate DATETIME,
+								@Active bit
 								)
 AS
 BEGIN
@@ -168,8 +169,9 @@ BEGIN
 			[Contact],
 			[Photo],
 			[CreatedBy],
-			[CreatedDate])
-		VALUES (@Id,@StudentID,@FullName,@Gender,@BirthDate,@BirthPlace,@FatherName,@FatherJob,@MotherName,@MotherJob,@CurrentPlace,@Contact,@Photo,@CreatedBy,@CreatedDate)
+			[CreatedDate],
+			[Active])
+		VALUES (@Id,@StudentID,@FullName,@Gender,@BirthDate,@BirthPlace,@FatherName,@FatherJob,@MotherName,@MotherJob,@CurrentPlace,@Contact,@Photo,@CreatedBy,@CreatedDate,@Active)
 END
 if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UPDATE_STUDENT]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
 drop procedure [dbo].UPDATE_STUDENT
@@ -189,7 +191,8 @@ CREATE PROCEDURE UPDATE_STUDENT(
 								@Contact NVARCHAR(255),
 								@Photo VARBINARY(MAX),
 								@CreatedBy NVARCHAR(255),
-								@CreatedDate DATETIME
+								@CreatedDate DATETIME,
+								@Active bit
 								)
 AS
 BEGIN
@@ -208,6 +211,7 @@ BEGIN
 			,[Photo] = @Photo
 			,[CreatedBy] = @CreatedBy
 			,[CreatedDate] = @CreatedDate
+			,[Active]=@Active
 			WHERE [ID] = @Id
 END
 
