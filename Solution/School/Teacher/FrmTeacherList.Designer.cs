@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelFilter = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtKeyword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.btnNew = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.btnView = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.panelFilter.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -84,6 +84,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ដើម្បីស្វែងរក";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Image = global::School.Properties.Resources.find_24x24;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(874, 23);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(86, 29);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "ស្វែងរក";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // panel2
             // 
@@ -297,19 +310,6 @@
             this.btnView.Text = "View Company";
             this.btnView.Click += new System.EventHandler(this.BtnView_Click);
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Image = global::School.Properties.Resources.find_24x24;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(874, 23);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(86, 29);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "ស្វែងរក";
-            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
-            // 
             // FrmTeacherList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 22F);
@@ -323,7 +323,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmTeacherList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CompanyList";
+            this.Text = "បញ្ជីររាយឈ្មោះគ្រូ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmTeacherList_Load);
             this.panelFilter.ResumeLayout(false);

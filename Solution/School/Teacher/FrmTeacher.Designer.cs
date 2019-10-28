@@ -191,6 +191,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmTeacher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ព័ត៌មានគ្រូ";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
