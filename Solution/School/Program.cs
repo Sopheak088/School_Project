@@ -1,5 +1,8 @@
-﻿using School.Company;
+﻿using School.Class;
+using School.Company;
 using School.Student;
+using School.Subject;
+using School.Teacher;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +21,7 @@ namespace School
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmStudentList());
+            Application.Run(new FrmClassList()); ;
         }
     }
 }

@@ -48,6 +48,18 @@
   <ItemGroup>
     <Compile Include="BaseObject\BaseClass.cs" />
     <Compile Include="BaseObject\FilterEntity.cs" />
+    <Compile Include="Class\FrmClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class\FrmClass.Designer.cs">
+      <DependentUpon>FrmClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\FrmClassList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class\FrmClassList.Designer.cs">
+      <DependentUpon>FrmClassList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Company\FrmCompany.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +125,12 @@
     <Compile Include="Teacher\FrmTeacherList.Designer.cs">
       <DependentUpon>FrmTeacherList.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Class\FrmClass.resx">
+      <DependentUpon>FrmClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Class\FrmClassList.resx">
+      <DependentUpon>FrmClassList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Company\FrmCompany.resx">
       <DependentUpon>FrmCompany.cs</DependentUpon>
     </EmbeddedResource>

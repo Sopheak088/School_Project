@@ -18,17 +18,16 @@ CREATE TABLE tbStudent
 	CurrentPlace NVARCHAR (255) COLLATE Khmer_100_BIN NOT NULL,
 	Contact NVARCHAR (255) COLLATE Khmer_100_BIN NOT NULL,
 	Photo VARBINARY(MAX) NOT NULL,
-
 	CreatedBy NVARCHAR(255) COLLATE Khmer_100_BIN NOT NULL,
 	CreatedDate DATETIME NULL,
 	UpdatedBy NVARCHAR(255) COLLATE Khmer_100_BIN NULL,
-	UpdatedDate DATETIME NULL
+	UpdatedDate DATETIME NULL,
+	Active BIT Null
 )
 GO
 CREATE TABLE tbClass(
 	ID UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
 	Name NVARCHAR(255) COLLATE khmer_100_BIN NOT NULL,
-
 	CreatedBy NVARCHAR(255) COLLATE Khmer_100_BIN NOT NULL,
 	CreatedDate DATETIME NULL,
 	UpdatedBy NVARCHAR(255) COLLATE Khmer_100_BIN NULL,
@@ -236,10 +235,7 @@ CREATE PROCEDURE INSERT_CLASS(
 						VALUES (@Id, @Name,@CreatedBy,@CreatedDate)
 END
 GO
-if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UPDATE_CLASS]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-drop procedure [dbo].UPDATE_CLASS
-GO
-CREATE PROCEDURE UPDATE_CLASS(
+CREATE PROCEDURE INSERT_CLASS(
 								@Id UNIQUEIDENTIFIER
 								,@Name NVARCHAR(255)
 								,@CreatedBy NVARCHAR(255)
@@ -247,32 +243,31 @@ CREATE PROCEDURE UPDATE_CLASS(
 							)
 					AS 
 					BEGIN
-					UPDATE tbClass SET
-							[Name] = @Name
-							,[CreatedBy] = @CreatedBy
-							,[CreatedDate] = @CreatedDate 
-						WHERE [ID] = @Id
-END
-GO
-/*tbSubject*/
-if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[INSERT_SUBJECT]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-drop procedure [dbo].INSERT_SUBJECT
-GO
-CREATE PROCEDURE INSERT_SUBJECT(
-								@Id	UNIQUEIDENTIFIER
-								,@Name NVARCHAR(255)
-								,@CreatedBy NVARCHAR(255)
-								,@CreatedDate DATETIME
-								)
-					AS 
-					BEGIN
-					INSERT INTO tbSubject(
+					INSERT INTO tbClass(
 							[ID]
 							,[Name]
 							,[CreatedBy]
 							,[CreatedDate]
 						)
 						VALUES (@Id, @Name,@CreatedBy,@CreatedDate)
+END
+GO
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UPDATE_CLASS]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].UPDATE_CLASS
+GO
+CREATE PROCEDURE UPDATE_CLASS(
+								@Id UNIQUEIDENTIFIER
+								,@Name NVARCHAR(255)
+								,@UpdatedBy Nvarchar(255)
+								,@UpdatedDate DateTime
+							)
+					AS 
+					BEGIN
+					UPDATE tbClass SET
+							[Name] = @Name
+							,[UpdatedBy]=@UpdatedBy
+							,[UpdatedDate]=@UpdatedDate
+						WHERE [ID] = @Id
 END
 Go
 if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UPDATE_SUBJECT]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
